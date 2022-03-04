@@ -5,23 +5,25 @@ using UnityEngine.UI;
 
 public class ArithmeticOperations : MonoBehaviour
 {
-    public Text firstNum, op, secondNum, result, evaluation;
+    public Text firstNum;
+    public Text op;
+    public Text secondNum;
+    public Text result;
+    public Text evaluation;
     public InputField resultField;
-    int num1, num2, opNumber, correctAnswer;
+    int num1;
+    int num2;
+    int opNumber;
+    int correctAnswer;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         NumCalc();
         OpCalc();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public void OpCalc() //Decides what the arithmetic operator is.
+    private void OpCalc() //Decides what the arithmetic operator is.
     {
         opNumber = Random.Range(1, 5);
         switch (opNumber)
@@ -47,7 +49,7 @@ public class ArithmeticOperations : MonoBehaviour
         }
     }
 
-    public void NumCalc()
+    private void NumCalc()
     {
         num1 = Random.Range(1, 16);
         firstNum.text = num1 + "";
